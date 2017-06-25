@@ -1,9 +1,8 @@
-FROM ubuntu:14.04
-MAINTAINER James Turnbull "james@example.com"
-ENV REFRESHED_AT 2015-07-20
+FROM redis
+MAINTAINER stefaman "stefaman@qq.com"
+ENV REFRESHED_AT 2017-06-25
 
-RUN apt-get update
-RUN apt-get -y install redis-tools
+EXPOSE 6379
 
 ENTRYPOINT ["/usr/bin/redis-cli"]
 CMD []

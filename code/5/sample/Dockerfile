@@ -1,11 +1,15 @@
-FROM ubuntu:16.04
-MAINTAINER James Turnbull "james@example.com"
-ENV REFRESHED_AT 2014-06-01
+FROM nginx
+MAINTAINER stefaman "stefaman@qq.com"
+ENV REFRESHED_AT 2017-06-25
 
-RUN apt-get -qq update && apt-get -qq install nginx
 
 RUN mkdir -p /var/www/html/website
+ADD website/index.html /var/www/html/website
+RUN rm -r /etc/nginx/conf.d/
 ADD nginx/global.conf /etc/nginx/conf.d/
 ADD nginx/nginx.conf /etc/nginx/
 
 EXPOSE 80
+
+# sudo docker run -d --name sample -p 80:80  -v $PWD/website:/var/www/html/website  sample nginx
+

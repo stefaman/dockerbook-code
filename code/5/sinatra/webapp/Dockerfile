@@ -1,8 +1,8 @@
-FROM ubuntu:16.04
-MAINTAINER James Turnbull "james@example.com"
-ENV REFRESHED_AT 2014-06-01
+FROM ruby
+MAINTAINER stefaman "stefaman@qq.com"
+ENV REFRESHED_AT 2017-06-25
 
-RUN apt-get -qq update && apt-get -qq install ruby ruby-dev build-essential redis-tools
+RUN apt-get update && apt-get -qq install build-essential  redis-tools
 RUN gem install --no-rdoc --no-ri sinatra json redis
 
 RUN mkdir -p /opt/webapp
