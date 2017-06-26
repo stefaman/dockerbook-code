@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 MAINTAINER James Turnbull <james@example.com>
-ENV REFRESHED_AT 2016-06-01
+ENV REFRESHED_AT 2016-06-25
 
 RUN apt-get -qq update
 RUN apt-get -qq install ruby ruby-dev build-essential nodejs
@@ -10,4 +10,4 @@ VOLUME /data
 VOLUME /var/www/html
 WORKDIR /data
 
-ENTRYPOINT [ "jekyll", "build", "--destination=/var/www/html" ]
+ENTRYPOINT [ "jekyll", "build", "--destination=/var/www/html", "--watch" ]
