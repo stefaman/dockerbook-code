@@ -1,4 +1,4 @@
-FROM jamtur01/redis
+FROM stef/nodeapp_redis_base
 MAINTAINER James Turnbull <james@example.com>
 ENV REFRESHED_AT 2016-06-01
 

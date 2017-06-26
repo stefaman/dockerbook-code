@@ -1,12 +1,12 @@
-FROM ubuntu:16.04
+FROM redis
 MAINTAINER James Turnbull <james@example.com>
 ENV REFRESHED_AT 2016-06-01
 
-RUN apt-get -qq update --fix-missing
-RUN apt-get install -qq software-properties-common python-software-properties
-RUN add-apt-repository ppa:chris-lea/redis-server
-RUN apt-get -qq update
-RUN apt-get -qq install redis-server redis-tools
+# RUN apt-get -qq update --fix-missing
+# RUN apt-get install -qq software-properties-common python-software-properties
+# RUN add-apt-repository ppa:chris-lea/redis-server
+# RUN apt-get -qq update
+# RUN apt-get -qq install redis-server redis-tools
 
 VOLUME [ "/var/lib/redis", "/var/log/redis" ]
 
